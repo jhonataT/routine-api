@@ -1,12 +1,12 @@
 import express, { Request, Response } from 'express';
 
 import { resolve } from 'path';
-import routes from './routes/api';
+import routineRoutes from './routes/routine';
 
 const app = express();
 
 app.get('/', (req: Request, res: Response) => res.send('404 ROUTE'));
-app.use('/api', routes);
+app.use('/routine', routineRoutes);
 
 app.listen(process.env.port || 3000, () => {
   console.log('Server is running: 3000');
